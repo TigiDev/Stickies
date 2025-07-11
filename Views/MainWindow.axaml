@@ -7,14 +7,31 @@
         x:Class="Stickies.Views.MainWindow"
         x:DataType="vm:MainWindowViewModel"
         Icon="/Assets/avalonia-logo.ico"
-        Title="Stickies">
+        Title="Stickies"
+        ExtendClientAreaToDecorationsHint="true"
+        ExtendClientAreaChromeHints="NoChrome"
+        ShowInTaskbar="False">
+        
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" /> 
+        </Grid.RowDefinitions>
+        
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*" />
+            <ColumnDefinition Width="100" />
+        </Grid.ColumnDefinitions>
 
-    <Design.DataContext>
-        <!-- This only sets the DataContext for the previewer in an IDE,
-             to set the actual DataContext for runtime, set the DataContext property in code (look at App.axaml.cs) -->
-        <vm:MainWindowViewModel/>
-    </Design.DataContext>
+        <!-- Button 1 -->
+        <Button Grid.Row="0" Grid.Column="0"
+                Content="Create Stickie"
+                Command="{Binding CreateNewStickieCommand}" />
 
-    <TextBlock Text="{Binding Greeting}" HorizontalAlignment="Center" VerticalAlignment="Center"/>
+        <!-- Button 2 -->
+        <Button Grid.Row="0" Grid.Column="1"
+                Content="Minimize Window" 
+                Click="MinimizeWindow" />
+    </Grid>
 
 </Window>
