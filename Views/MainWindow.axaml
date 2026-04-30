@@ -36,7 +36,7 @@
         <Button 
             HorizontalAlignment="Center"
             VerticalAlignment="Center"
-            Content="login"
+            Content="loginn"
             Command="{Binding LoginCommand}"></Button>
     </Grid>
 
