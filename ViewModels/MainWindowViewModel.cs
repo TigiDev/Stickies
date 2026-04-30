@@ -14,6 +14,7 @@ public class MainWindowViewModel : ViewModelBase
     public MainWindowViewModel()
     {
         CreateNewStickieCommand = new RelayCommand(CreateNewStickie);
+        LoginCommand = new RelayCommand(LoginToNextcloud);
         
         InitializeTrayIcon();
     }
@@ -25,7 +26,7 @@ public class MainWindowViewModel : ViewModelBase
 
     private static TrayIcon? _trayIcon;
     public ICommand CreateNewStickieCommand { get; }
-    
+    public ICommand LoginCommand { get; }
 // === FIELDS & PROPERTIES ===
     
 //-----------------------------------------------------------------------------------------------------------    
@@ -78,6 +79,11 @@ public class MainWindowViewModel : ViewModelBase
             mainWindow.Show();
             mainWindow.WindowState = WindowState.Normal;
         }
+    }
+
+    private static void LoginToNextcloud()
+    {
+        Console.WriteLine("login to nextcloud");
     }
 
     private static void CreateNewStickie()

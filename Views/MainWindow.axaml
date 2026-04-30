@@ -32,6 +32,12 @@
         <Button Grid.Row="0" Grid.Column="1"
                 Content="Minimize Window" 
                 Click="MinimizeWindow" />
+        
+        <Button 
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Content="login"
+            Command="{Binding LoginCommand}"></Button>
     </Grid>
 
 </Window>
